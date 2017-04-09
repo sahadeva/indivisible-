@@ -4,10 +4,11 @@ date: 2017-02-22 00:11:00 Z
 categories:
 - action
 is featured: true
-call-script-text: "Hi, my name is ____, I'm a local constituent. My zip code is ___.
-  I want Representative _____ to say NO to Andy Puzder. He is terrible choice for
-  Secretary of Labor. Yesterday, Puzder and the parent company of his Carl's Jr. fast-food
-  chain were hit with a class action lawsuit for wage suppression! \n\n..."
+call-script-text: "[Link Test](http://indivisibletemplate.com)\n\nHi, my name is ____,
+  I'm a local constituent. My zip code is ___. I want Representative _____ to say
+  NO to Andy Puzder. He is terrible choice for Secretary of Labor. Yesterday, Puzder
+  and the parent company of his Carl's Jr. fast-food chain were hit with a class action
+  lawsuit for wage suppression! \n\n..."
 ---
 
 [Link Test](http://indivisibletemplate.com)
