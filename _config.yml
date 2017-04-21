@@ -1,5 +1,5 @@
 ---
-title: Indivisible SF
+title: Indivisible City
 timezone: UTC
 collections:
   posts:
@@ -8,11 +8,11 @@ collections:
   representatives:
     title: Representatives
     output: false
+  successes:
+    title: Successes
+    output: true
   uploads:
     title: Uploads
-    output: true
-  media-items:
-    title: media-items
     output: true
 defaults:
 - scope:
@@ -29,44 +29,51 @@ defaults:
     layout: post
 - scope:
     path: ''
+    type: pages
+  values:
+    layout: page
+- scope:
+    path: ''
     type: representatives
   values:
-    main-image: 
-    phone-numbers: 
+    phone-numbers:
+      office-name: "(000) 000-0000"
     website: 
 - scope:
     path: ''
-    type: media-items
+    type: successes
   values:
+    is featured: false
     main-image: 
+    layout: media-item
 - scope:
     path: ''
     type: calendar
   values:
     embed-code: 
-subtitle: We are thousands of San Franciscans resisting the Trump agenda through civic
+- scope:
+    path: ''
+    type: becomeAMember
+  values:
+    main-image: 
+    mailchimp-form-embed: 
+subtitle: We are thousands of local citizens resisting the Trump agenda through civic
   action.
-email: sahadeva@sahadeva.com
-description: Indivisible SF is a group of local residents inspired by the Indivisible
-  Guide, which provides a practical framework for resisting the Trump agenda. By standing
-  together, we can keep the pressure on our representatives to defend progressive
-  values and fight for us in Washington.
+email: 
 baseurl: 
-url: indivisiblesf.org
-twitter_username: indivisiblesf
-github_username: indivisiblesf
-facebook_username: indivisiblesf
+url: 
+twitter_username: 
+facebook_username: 
 background-image: "/uploads/31773994174_c2e5706218_k.jpg"
-mailchimp-form-id: 
-member-count: '2,400'
+member-count: '100'
+footer-title: Spread the word. Help build a movement.
 markdown: kramdown
-theme: minima
 gems:
 - jekyll-feed
 - jekyll-paginate
-- jekyll-sitemap
 paginate: 10
 paginate_path: "/blog/page:num/"
 exclude:
 - Gemfile
 - Gemfile.lock
+google_analytics: 

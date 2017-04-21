@@ -12,13 +12,13 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$primary:          #0275d8;
+$primary:          #0057b8;
 $light:            #fff;
-$dark:             #333;
+$dark:             #003;
 
-$light-bg:         #f4f7f9;
+$light-bg:         #fafafa;
 
-$danger:           #d9534f;
+$danger:           #e4002b;
 
 $text-color:       #111;
 
@@ -28,32 +28,41 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$facebook:         #3b5998;
+$twitter:          #00aced;
+
 // RESETS
 
-.bg-inverse {
-    background-color: #002868!important;
-}
+.bg-primary { background-color: $primary!important; }
+.bg-inverse { background-color: $primary!important; }
+.bg-dark { background-color: $grey-color-dark!important;}
+.bg-medium { background: $grey-color-light!important; }
+.bg-light { background: $light-bg!important; }
 
-.bg-dark {
-  background: #f7f7f9;
-}
-
-.bg-medium {
-  background: $grey-color-light;
-}
-
-.bg-light {
-  background: $light-bg;
+a {
+  color: $primary;
 }
 
 a:hover, a:active {
-  color: darken($primary, 40%);
   text-decoration: none;
 }
+
+  .btn-primary:hover {
+    background: #014c8c!important;
+    border-color: #014c8c!important;
+  }
+
+  .btn-danger:hover {
+    background: #c9302c!important;
+    border-color: #c9302c!important;
+  }
 
 .btn {
   font-family: sans-serif;
 }
+
+  .btn-primary { background: $primary!important; border-color: $primary!important; }
+  .btn-danger { background: $danger!important; border-color: $danger!important; }
 
 .btn-icon {
   position: relative;
@@ -100,22 +109,54 @@ a:hover, a:active {
   font-weight: bold;
 }
 
+.btn-fb {
+  background: $facebook;
+  border-color: $facebook;
+}
+
+.btn-twitter {
+  background: $twitter;
+  border-color: $twitter;
+}
+
+.text-danger { color: $danger!important; }
+.text-primary { color: $primary!important; }
+
 hr, .list-group-item {
   border-color: $border-color;
   opacity: 1;
 }
 
   hr.inverse, .bg-inverse hr {
-    border-color: #01579B;
+    border-color: $dark;
   }
 
 .badge {
   padding: 4px 5px;
 }
 
+  .badge-primary { background-color: $primary; }
+  .badge-danger { background-color: $danger; }
+
+#mc_embed_signup {
+  background: transparent!important;
+}
+
+  #mc_embed_signup form {
+    padding: 0!important
+  }
+
+  #mc_embed_signup .button {
+    background: $primary!important;
+  }
+
 @media (max-width: 768px) {
   .media .btn-action {
     margin-right: 0!important;
+  }
+
+  .join-btn {
+    margin: 0!important;
   }
 
   .media img {
@@ -126,14 +167,14 @@ hr, .list-group-item {
 // TYPE
 
 .navbar-brand {
-  font-weight: 800;
+  letter-spacing: .5px;
 }
 
 h1, h2, h3, h4, h5, .navbar-brand, .navbar .btn {
   font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, .navbar-brand {
+h1, h2, h3, h4, h5.title, .navbar-brand {
   font-family: 'Work Sans', sans-serif;
 }
 
@@ -176,20 +217,26 @@ p, h5 {
 
 @media (max-width: 758px) {
   h1 {
-    font-size: $base-font-size * 2;
-    line-height: 44px;
+    font-size: $base-font-size * 1.5;
+    line-height: 37px;
   }
   h2 {
-    font-size: $base-font-size * 1.5;
+    font-size: $base-font-size * 1.375;
   }
 
-    h2 strong {
-      font-size: $base-font-size * 1.25;
-    }
+  h3 {
+    font-size: $base-font-size * 1.25;
+  }
 
   h4 {
     font-size: $base-font-size;
+    line-height: 1.5rem;
   }
+
+  h5, p {
+    font-size: $base-font-size *.9;
+  }
+
   .card-title {
     margin-bottom: 0;
   }
@@ -209,15 +256,53 @@ p, h5 {
   vertical-align: middle;
 }
 
+.navbar-inverse .navbar-nav .nav-link {
+  color: rgba(255,255,255,.75)
+}
 
+  .navbar-inverse .navbar-nav .nav-link:focus, .navbar-inverse .navbar-nav .nav-link:hover {
+    color: rgba(255,255,255,.9)
+  }
 
 @media (max-width: 767px) {
+
   .navbar>.container {
     width: 100%;
   }
-  .container .navbar-toggler-right {
-    right: 0;
+
+  .navbar-brand {
+    font-size: 1rem;
   }
+
+  .navbar-inverse .navbar-toggler {
+    border: 0;
+    padding: 0;
+  }
+
+    .container .navbar-toggler-right {
+      right: 0;
+    }
+
+  .navbar-nav {
+    margin: .5rem -1rem .5rem;
+    width: auto;
+  }
+
+  .navbar-nav>li.nav-item {
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color:  rgba(255,255,255,.5);
+  }
+
+    .navbar-nav>li.nav-item:not(.join-btn) a {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .navbar-nav>li.nav-item.join-btn {
+      padding: 1rem 1rem 0;
+    }
+
 }
 
 // FORM
@@ -253,6 +338,12 @@ p, h5 {
 
 // CONTENT
 
+.home-header-wrap {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
 .home-header {
   position: relative;
   margin-top: -25px;
@@ -260,8 +351,7 @@ p, h5 {
   background-size: cover;
   background-position: center;
   padding-top: $spacing-unit*1.25;
-  padding-bottom: $spacing-unit*1.25;
-
+  padding-bottom: $spacing-unit*1.15;
 }
 
   .home-header h2, .home-header h1 {
@@ -293,38 +383,6 @@ p, h5 {
 
 // BLOG POSTS
 
-a.alert {
-  display: block;
-  color: rgba(0,0,0,.5);
-  font-weight: bold;
-  font-size: $base-font-size;
-  position: relative;
-  padding-right: $spacing-unit;
-  color: $light;
-}
-
-  a.alert strong {
-
-    text-transform: uppercase;
-  }
-
-  a.alert i.material-icons {
-    position: absolute;
-    top: 15%;
-    right: 0;
-    font-size: $base-font-size*2;
-  }
-
-a.alert-danger {
-  background: $danger;
-  border-color: $danger;
-}
-
-a.alert-primary {
-  background: $primary;
-  border-color: $primary;
-}
-
 .header-image, .thumb-wrap {
   display: block;
   background-size: cover;
@@ -343,13 +401,13 @@ a.alert-primary {
       height: 65px;
     }
 
-  .btn.action-v-img {
-    margin-right: -38px!important;
-  }
-
 .list-group-x-flush .list-group-item {
   background: transparent;
   padding-left: 0;
+}
+
+.event .badge {
+  margin-bottom: 5px;
 }
 
 @media (min-width: 768px) {
@@ -358,11 +416,19 @@ a.alert-primary {
     font-size: $base-font-size*1.25;
     line-height: $base-line-height*1.1;
   }
+  .btn.action-v-img {
+    margin-right: -38px!important;
+  }
+
 }
 
 @media (max-width: 768px) {
   .home-header {
-    padding-top: $spacing-unit;
+    padding-top: $spacing-unit/2;
+    padding-bottom: $spacing-unit/2;
+  }
+  .header-image {
+    height: 230px;
   }
 }
 
